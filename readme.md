@@ -1,6 +1,3 @@
 
 ## Instructions 
-
-### 17 April 2021 
-#### 1. Git Hub 
-    
+Link for PPT Github -  https://slides.com/bolajiayodeji/version-control-with-git-and-github#/2
