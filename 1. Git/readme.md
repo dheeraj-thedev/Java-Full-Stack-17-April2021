@@ -1,7 +1,5 @@
 
-## Instructions 
-
-### 17 April 2021       
+## Agenda for 18 April 2021 discussed on 17 April 2021       
 
     for Tomorrows Class
         What we have done ?
