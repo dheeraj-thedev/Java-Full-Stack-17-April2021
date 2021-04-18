@@ -49,7 +49,6 @@ Repository contains some notes along with examples created for practice.
 - Maven
 
 #### 2. Become a back-end expert
-- Java Certification Training Course
 - SQL Training
 
 #### 3. Implement Frameworks the DevOps Way
