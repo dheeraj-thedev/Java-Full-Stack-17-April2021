@@ -42,6 +42,31 @@ public class Runner {
 				board.showAllCourse();
 				break;
 			}
+			case 6: {
+				// parm show all unassigned may be
+				// select user
+				board.showAllCourse();
+				int courseId = readUtil.readInt("Please choose a course from above courses",
+						"Invalid Input or course Id");
+				board.showAllInstructor();
+				int userId = readUtil.readInt("Please choose a Instructor from above users",
+						"Invalid Input or course Id");
+				// 1.java
+				// 2 Dot net
+				board.addInstructorToCourse(courseId, userId);
+				break;
+			}
+			case 7: {
+				board.showAllCourse();
+				int courseId = readUtil.readInt("Please choose a course from above courses",
+						"Invalid Input or course Id");
+				board.showAllLearner();
+				int userId = readUtil.readInt("Please choose a Learner from above users", "Invalid Input or course Id");
+				// 1.java
+				// 2 Dot net
+				board.addInstructorToCourse(courseId, userId);
+				break;
+			}
 			default:
 				System.out.println("ivalid choise " + choice);
 			}

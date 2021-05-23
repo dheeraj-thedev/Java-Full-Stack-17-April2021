@@ -41,6 +41,10 @@ public class User {
 		return role;
 	}
 
+	public int getUserId() {
+		return this.id;
+	}
+
 	public void setRole(Roles role) {
 		this.role = role;
 	}
@@ -48,7 +52,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", email=" + email + ", address=" + address + ", role=" + role
-				+ "]";
+				+ "]\n";
 	}
 
 }

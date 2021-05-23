@@ -6,7 +6,6 @@ import java.io.InputStreamReader;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 
-
 public class ReadUtil {
 	// how to read input from the user ?
 	// Scanner approach -->
@@ -59,7 +58,11 @@ public class ReadUtil {
 			System.err.println(e.getMessage() + "\n" + e.getLocalizedMessage());
 			val = readDate(userMsg, errorMsg);
 		} catch (IOException e) {
-			System.err.println(e);
+			System.out.println(errorMsg + e.getMessage());
+			val = readDate(userMsg, errorMsg);
+		} catch (Exception e) {
+			System.out.println(errorMsg + e.getMessage());
+			val = readDate(userMsg, errorMsg);
 		}
 		return val;
 	}

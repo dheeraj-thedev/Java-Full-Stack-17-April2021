@@ -24,10 +24,12 @@ public class DashBoard {
 	public void showInitialMessages() {
 		System.out.println("Main Menu========================");
 		System.out.println("1. To add a Learner");
-		System.out.println("2. To add an Instructor");
+		System.out.println("2. To add user");
 		System.out.println("3. To add a Course");
 		System.out.println("4. To show all courses");
 		System.out.println("5. To show all Users");
+		System.out.println("6. To add instructors To the Course");
+		System.out.println("7. To add learners To the Course");
 
 	}
 
@@ -37,7 +39,6 @@ public class DashBoard {
 		course.setStartDate(readUtil.readDate("Please enter the Start {YYYY-MM-DD} date ", "Invalid Date"));
 		course.setEndDate(readUtil.readDate("Please enter the End {YYYY-MM-DD} date ", "Invalid Date"));
 		courseServices.saveCourse(course);
-
 	}
 
 	public void addUser() {
@@ -45,7 +46,7 @@ public class DashBoard {
 		user.setName(readUtil.readString("Please enter the name ", "Invalid Name"));
 		user.setEmail(readUtil.readString("Please enter the email", "Invalid  Email"));
 		user.setAddress(readUtil.readString("Please enter the address", "invalid Address"));
-		int role = readUtil.readInt("Please choose 	\n 1. ->ADMIN \n2 ->INSTRUCTOR \n3. -> LEARNER\r\n",
+		int role = readUtil.readInt("Please choose 	\n1. ->ADMIN \n2 ->INSTRUCTOR \n3. -> LEARNER",
 				"Invalid Role Selection");
 		switch (role) {
 		case 1: {
@@ -68,14 +69,42 @@ public class DashBoard {
 		courseServices.saveUser(user);
 	}
 
+	public Course addLearnerToCourse(int courseId, int userId) {
+		return courseServices.assignLearnerToCourse(courseId, userId);
+	}
+
+	public Course addInstructorToCourse(int courseId, int userId) {
+		return courseServices.assignIntrucorToCourse(courseId, userId);
+	}
+
 	public void showAllCourse() {
 		courseServices.getAllCourses().forEach(System.out::println);
 	}
 
 	public void showAllUsers() {
 		List<User> list = courseServices.getAllUsers();
-		System.out.println(list);
-		System.out.println(list.size());
+		// System.out.println(list);
+		list.forEach(System.out::println);
+
+	}
+
+	public void showAllInstructor() {
+		List<User> list = courseServices.getAllUsers();
+		for (User user : list) {
+			if (user.getRole() == Roles.INSTRUCTOR) {
+				System.out.println(user);
+			}
+		}
+
+	}
+
+	public void showAllLearner() {
+		List<User> list = courseServices.getAllUsers();
+		for (User user : list) {
+			if (user.getRole() == Roles.LEARNER) {
+				System.out.println(user);
+			}
+		}
 
 	}
 
