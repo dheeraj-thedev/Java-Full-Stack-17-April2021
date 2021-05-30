@@ -1,7 +1,25 @@
 
 ### Assignment 30-05-2021
 
-
+	
+  ## 1
+	Write a Java program to create an array [32,21,54,2,5,8,91] You have to sort it ? after sorting do a sum and display as sum 	of the array
+	
+  ## 2
+	*
+	**
+	***
+	****
+	*****
+	to be able to create this program just get 	the number entered by the user and generate a Triagle 
+	
+  ## 3 get 10 numeric data from user into an array and find repeated values if found remove those from the 	array
+	12
+  13
+14
+12
+13
+14
 
 
 
